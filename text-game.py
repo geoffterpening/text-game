@@ -13,34 +13,50 @@ test = ""
 
 # --------------Functions
 
-def north():
+def south():
     global player_lat
+    global current_room_description
+    global current_room_name
     if player_lat < 3:
         player_lat += 1
+        current_room_description = [room.desc for room in room_list if
+                                    room.lat == player_lat and room.lon == player_lon]
     else:
         print("There is no door there")
 
 
-def south():
+def north():
     global player_lat
+    global current_room_description
+    global current_room_name
     if player_lat > 1:
         player_lat -= 1
+        current_room_description = [room.desc for room in room_list if
+                                    room.lat == player_lat and room.lon == player_lon]
     else:
         print("There is no door there")
 
 
 def west():
     global player_lon
+    global current_room_description
+    global current_room_name
     if player_lon < 3:
         player_lon += 1
+        current_room_description = [room.desc for room in room_list if
+                                    room.lat == player_lat and room.lon == player_lon]
     else:
         print("There is no door there")
 
 
 def east():
     global player_lon
+    global current_room_description
+    global current_room_name
     if player_lon > 1:
         player_lon -= 1
+        current_room_description = [room.desc for room in room_list if
+                                    room.lat == player_lat and room.lon == player_lon]
     else:
         print("There is no door there")
 
@@ -77,6 +93,3 @@ while player_exit != "y":
         except KeyError:
             print("I don't recognize that command.")
     # play again
-
-
-#  and x.lon = player_lon
