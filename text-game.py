@@ -70,22 +70,21 @@ def exit_program():
     global player_exit
     player_exit = "y"
 
-
-
 command_dict = {
     'north': north,
     'south': south,
     'east': east,
     'west': west,
     'look': look,
-    'exit': exit_program
+    'exit': exit_program,
+    'quit': exit_program
 }
 
 # -------------------game loop
 while player_exit != "y":
     # Intro
-    print("Welcome to Adventuretron you fucking bitch. It's the best game in the world!")
-    print("You find yourself standing in a room. What the fuck do you do?")
+    print("Welcome to Adventuretron. It's the best game in the world!")
+    print("You find yourself standing in a room. What do you do?")
     input("Press enter to begin:")
     print("\n Enter a command below:")
 
