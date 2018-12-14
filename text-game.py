@@ -66,12 +66,19 @@ def look():
     print(current_room_description[0])
 
 
+def exit_program():
+    global player_exit
+    player_exit = "y"
+
+
+
 command_dict = {
     'north': north,
     'south': south,
     'east': east,
     'west': west,
-    'look': look
+    'look': look,
+    'exit': exit_program
 }
 
 # -------------------game loop
@@ -82,7 +89,7 @@ while player_exit != "y":
     input("Press enter to begin:")
     print("\n Enter a command below:")
 
-    while True:
+    while player_exit != "y":
         try:
             # input
             # print(current_room_name[0])
@@ -92,4 +99,8 @@ while player_exit != "y":
             # find()
         except KeyError:
             print("I don't recognize that command.")
-    # play again
+
+
+
+print("Goodbye!")
+input('press any key to exit')
