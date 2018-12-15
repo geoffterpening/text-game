@@ -1,14 +1,15 @@
 from Room import *
 
-
 # ---------------Variables
 
 player_lat = 2
 player_lon = 2
 player_exit = "n"
+
+'''the following 2 variables create a list, but since there is only one object that (should) fit the parameters, they
+will only have one item, allowing you to call them as need be'''
 current_room_name = [room.name for room in room_list if room.lat == player_lat and room.lon == player_lon]
 current_room_description = [room.desc for room in room_list if room.lat == player_lat and room.lon == player_lon]
-test = ""
 
 
 # --------------Functions
@@ -70,6 +71,8 @@ def exit_program():
     global player_exit
     player_exit = "y"
 
+
+# this dict converts strings to non strings
 command_dict = {
     'north': north,
     'south': south,
@@ -86,19 +89,18 @@ while player_exit != "y":
     print("Welcome to Adventuretron. It's the best game in the world!")
     print("You find yourself standing in a room. What do you do?")
     input("Press enter to begin:")
+    # the below could be worded better (commands not obvious)
     print("\n Enter a command below:")
 
     while player_exit != "y":
         try:
             # input
-            # print(current_room_name[0])
             command = input("> ")
             command_dict[command]()
             print(str(player_lat) + " Lat, " + str(player_lon) + " Lon")
             # find()
         except KeyError:
             print("I don't recognize that command.")
-
 
 
 print("Goodbye!")
