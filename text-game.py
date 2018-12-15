@@ -6,8 +6,8 @@ player_lat = 2
 player_lon = 2
 player_exit = "n"
 
-'''the following 2 variables create a list, but since there is only one object that (should) fit the parameters, they
-will only have one item, allowing you to call them as need be'''
+# the following 2 variables create a list, but since there is only one object that (should) fit the parameters, they
+# will only have one item, allowing you to call them as need be
 current_room_name = [room.name for room in room_list if room.lat == player_lat and room.lon == player_lon]
 current_room_description = [room.desc for room in room_list if room.lat == player_lat and room.lon == player_lon]
 

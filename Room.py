@@ -6,6 +6,7 @@ class Room:
         self.lon = lon
         self.desc = desc
 
+
 # each room has to have unique & contiguous coordinates. Mechanic does not support non-rectangular maps at this point
 # if you add to this list, adjust the functions in app.py to allow for higher coords.
 room_list = {
